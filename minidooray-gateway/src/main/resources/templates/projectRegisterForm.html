@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Register Project</title>
+</head>
+<body>
+<div class="container mt-5 text-center center signup-container">
+    <h1 class="mt-5">Register Your Project!</h1>
+    <p class="mt-2">당신이 관리하는 프로젝트를 만들어보세요!</p>
+    <form action="/project/register" method="post" class="mt-3">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInputText" placeholder="name@example.com" name="name">
+            <label for="floatingInputText">프로젝트 이름을 입력하세요</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInputEmail" placeholder="name@example.com" name="adminId" th:value="${user.id}" readonly>
+            <label for="floatingInputEmail">관리자 식별 아이디</label>
+        </div>
+        <button type="submit" class="mt-3 btn btn-primary">Register</button>
+    </form>
+</div>
+</body>
+</html>

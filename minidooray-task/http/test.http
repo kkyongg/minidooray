@@ -1,0 +1,156 @@
+
+
+### 프로젝트 등록
+POST localhost:8080/api/project/register
+Content-Type: application/json
+
+{
+  "name": "k",
+  "adminId": "1"
+}
+
+### 프로젝트 조회 get		/api/project/{projectId}
+GET localhost:8080/api/project/1
+
+### 프로젝트 멤버 추가 post		/api/project/{projectId}/addMember/{memberId}
+POST localhost:8080/api/project/1/addMember/2
+
+
+### tag 등록 1
+POST localhost:8080/api/tag/register
+Content-Type: application/json
+
+{
+  "name": "tag1",
+  "projectId": "1"
+}
+
+### tag 등록 2
+POST localhost:8080/api/tag/register
+Content-Type: application/json
+
+{
+  "name": "tag2",
+  "projectId": "1"
+}
+
+### milestone 등록1
+POST localhost:8080/api/milestone/register
+Content-Type: application/json
+
+{
+  "projectId": "1",
+  "status": "start"
+}
+
+### milestone 등록2
+POST localhost:8080/api/milestone/register
+Content-Type: application/json
+
+{
+  "projectId": "1",
+  "status": "end"
+}
+
+
+### task 등록
+POST localhost:8080/api/task/register
+Content-Type: application/json
+
+{
+  "name": "task1",
+  "content": "bla",
+  "userId": "2",
+  "projectId": "1",
+  "tag": [
+    {
+      "id": "1",
+      "name": "tag1"
+    },
+    {
+      "id": "2",
+      "name": "tag2"
+    }
+  ],
+  "milestone": {
+    "id": "1",
+    "status": "start"
+  }
+}
+
+
+
+### 프로젝트 조회 get		/api/project/{projectId}
+GET localhost:8080/api/project/1
+
+### Comment 등록
+POST localhost:8080/api/comment/register
+Content-Type: application/json
+
+{
+  "taskId": "1",
+  "projectMemberId": "1",
+  "content": "comment1"
+}
+
+### userId 로 모든 관련 프로젝트 조회
+GET localhost:8080/api/projects/2
+
+### task 클릭시 조회
+
+GET localhost:8080/api/task/1
+
+
+### project 수정폼
+GET localhost:8080/api/project/edit/1
+
+### project 수정
+POST localhost:8080/api/project/edit/1
+Content-Type:application/json
+
+{
+  "name": "project1",
+  "status": "INACTIVE"
+}
+
+### task 수정폼
+GET localhost:8080/api/task/edit/1
+
+
+### task 수정
+POST localhost:8080/api/task/edit/1
+Content-Type: application/json
+
+{
+  "name": "revision1",
+  "content": "revision",
+  "tag": [
+    {
+      "id": "2",
+      "name": "tag2"
+    }
+  ],
+  "milestone": {
+    "id": "2",
+    "status": "end"
+  }
+}
+
+
+### tag 삭제
+DELETE localhost:8080/api/tag/1
+
+### milestone 삭제
+DELETE localhost:8080/api/milestone/1
+
+### comment 삭제
+DELETE localhost:8080/api/comment/1
+
+### task 삭제
+DELETE localhost:8080/api/task/1
+
+
+### project 삭제
+DELETE localhost:8080/api/project/1
+
+

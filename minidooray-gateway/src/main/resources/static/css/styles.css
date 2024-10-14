@@ -1,0 +1,20 @@
+a {
+    text-decoration: none;
+}
+
+.login-container, .signup-container, .container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.login-container h1 {
+    margin-top: 300px;
+}
+
+.buttons button {
+    margin-right: 15px;
+}
+
+.buttons a {
+    margin-left: 15px;
+}

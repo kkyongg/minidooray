@@ -1,0 +1,38 @@
+### 회원 등록
+POST http://localhost:7070/api/account/register
+Content-Type:application/json
+
+{
+    "userId":"test",
+    "password":"123",
+    "email":"kk@gmail.com"
+}
+
+### 로그인
+POST http://localhost:7070/api/login
+Content-Type:application/json
+
+{
+    "userId":"test"
+}
+
+### 회원 조회
+GET http://localhost:7070/api/mypage/test
+
+### 회원 탈퇴
+DELETE http://localhost:7070/api/resign/test
+
+### 회원 수정
+PUT http://localhost:7070/api/edit/test
+Content-Type:application/json
+
+{
+  "id": 1,
+  "userId": "test",
+  "email": "kk@gmail.com",
+  "password": "1234",
+  "status": "ACTIVE"
+}
+
+### 휴면 회원 업데이트
+PUT http://localhost:7070/users/inactive
